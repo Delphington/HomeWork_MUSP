@@ -3,4 +3,8 @@ project(task_1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(task_1 main.cpp)
+add_executable(task_1 main.cpp
+        ForwardListFalse.h
+        ForwardListFalse.cpp
+        ForwardList.h
+        ForwardList.cpp)
