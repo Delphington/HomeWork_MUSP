@@ -27,23 +27,40 @@ public:
         return info;
     }
 
-    static bool isNormalOrder() {
-        stack<char> myStack;
-        for (char c: info) {
-            if (c == '(' || c == '{' || c == '[') {
-                myStack.push(c);
-            } else {
-                if (myStack.empty() ||
-                    (c == ')' && myStack.top() != '(') ||
-                    (c == '}' && myStack.top() != '{') ||
-                    (c == ']' && myStack.top() != '[')) {
-                    return false;
+
+    int static isNormalOrder() {
+        stack<int> stack;
+        for (int index = 0; index < info.length(); index++) {
+            char ch = info[index];
+
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.push(index);
+            } else if (ch == ')' || ch == ']' || ch == '}') {
+
+                if (stack.empty()) {
+                    //нет пары для закрытой
+                    return index;
                 }
-                myStack.pop();
+
+                //если ошибка с парами закрывающая не соответсвует
+                char top = info[stack.top()];
+                if ((ch == ')' && top != '(') ||
+                    (ch == ']' && top != '[') ||
+                    (ch == '}' && top != '{')) {
+                    return index;
+                }
+                stack.pop();
             }
         }
-        return myStack.empty();
+
+        //остались откртые скобки не закрыты
+        if (!stack.empty()) {
+            return stack.top();
+        }
+
+        return -1; // Ввсе гуд
     }
+
 };
 
 
@@ -59,11 +76,12 @@ int main() {
     if (str.empty()) {
         cout << "File is empty OR dont open";
     } else {
-        if (SrvInfo::isNormalOrder()) {
-            cout << "order is good \n";
-            return 0;
+        int ans = SrvInfo::isNormalOrder();
+        if (ans == -1) {
+            cout << "success";
+        } else {
+            cout << ans;
         }
-        cout << "order is not good";
     }
     return 0;
 }
