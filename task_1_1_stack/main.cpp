@@ -69,19 +69,30 @@ string SrvInfo::info = "";
 
 int main() {
 
-    const string PATH_TO_FILE = "D:\\_DELPGINGTON\\University\\Sem_3\\Musp\\task_1_1_stack\\info.txt";
+//    const string PATH_TO_FILE = "D:\\_DELPGINGTON\\University\\Sem_3\\Musp\\task_1_1_stack\\info.txt";
+//
+//    string str = SrvInfo::openFile(PATH_TO_FILE);
+//
+//    if (str.empty()) {
+//        cout << "File is empty OR dont open";
+//    } else {
+//        int ans = SrvInfo::isNormalOrder();
+//        if (ans == -1) {
+//            cout << "success";
+//        } else {
+//            cout << ans;
+//        }
+//    }
 
-    string str = SrvInfo::openFile(PATH_TO_FILE);
 
-    if (str.empty()) {
-        cout << "File is empty OR dont open";
-    } else {
-        int ans = SrvInfo::isNormalOrder();
-        if (ans == -1) {
-            cout << "success";
-        } else {
-            cout << ans;
+        int s,t;
+        cin>>s;
+        cin>> t;
+        if(s>5 &&   t>5){
+            cout<<"Yes";
+        }else{
+            cout<<"No";
         }
-    }
+
     return 0;
 }
