@@ -10,7 +10,9 @@ private:
     Solve() {};
 public:
     static pair<int, int> countSymbol(string str, char one, char zero) {
-
+        //убираем дубликаты
+        auto lasts = remove(str.begin(), str.end(),' ');
+        str.erase(lasts, str.end());
         auto last = unique(str.begin(), str.end());
         str.erase(last, str.end());
 
