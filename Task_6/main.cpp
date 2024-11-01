@@ -22,7 +22,7 @@ public:
         ifstream inputFile(path);
 
         if (!inputFile) {
-            cerr << "Cannot open file. Cannot read." << endl;
+            cerr << "Cannot open" << endl;
             return;
         }
         inputFile >> n >> a >> b;
