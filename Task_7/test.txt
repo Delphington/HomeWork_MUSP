@@ -1,0 +1,4 @@
+HP Spectre x360,ноутбук, 5, 1499.99
+Apple MacBook Air,ноутбук, 6, 999.99
+apple,телефон, 2, 500
+android,телефон, 3, 600

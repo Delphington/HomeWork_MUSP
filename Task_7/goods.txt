@@ -1,0 +1,43 @@
+HP Spectre x360, ноутбук, 5, 1499.99
+Dell XPS 13, ноутбук, 10, 1299.99
+Lenovo ThinkPad X1, ноутбук, 7, 1399.99
+Apple MacBook Air, ноутбук, 6, 999.99
+Acer Swift 3, ноутбук, 8, 849.99
+Asus ZenBook 14, ноутбук, 4, 1099.99
+Microsoft Surface Laptop 4, ноутбук, 3, 1399.99
+HP Pavilion 15, ноутбук, 5, 749.99
+Razer Blade Stealth, ноутбук, 2, 1699.99
+Lenovo IdeaPad 3, ноутбук, 9, 649.99
+iPad Air, планшет, 12, 599.99
+Samsung Galaxy Tab S7, планшет, 10, 649.99
+Amazon Fire HD 10, планшет, 15, 149.99
+Lenovo Tab P11, планшет, 8, 299.99
+Microsoft Surface Pro 7, планшет, 4, 899.99
+Samsung Galaxy Tab A, планшет, 6, 229.99
+Apple iPad Mini, планшет, 3, 399.99
+Xiaomi Pad 5, планшет, 7, 399.99
+Huawei MatePad, планшет, 5, 349.99
+Apple iPhone 13, телефон, 15, 999.99
+Samsung Galaxy S21, телефон, 10, 799.99
+Google Pixel 6, телефон, 12, 599.99
+OnePlus 9, телефон, 8, 729.99
+Xiaomi Mi 11, телефон, 6, 749.99
+Sony Xperia 5 II, телефон, 4, 899.99
+Nokia G20, телефон, 10, 249.99
+Motorola Moto G Power, телефон, 7, 199.99
+Apple AirPods Pro, наушники, 20, 249.99
+Sony WH-1000XM4, наушники, 15, 349.99
+Bose QuietComfort 35 II, наушники, 5, 299.99
+JBL Live 650BTNC, наушники, 12, 199.99
+Sennheiser HD 450BT, наушники, 6, 249.99
+Apple AirPods Max, наушники, 3, 549.99
+Sony WF-1000XM4, наушники, 8, 279.99
+Anker Soundcore Life Q20, наушники, 10, 89.99
+Beats Studio3 Wireless, наушники, 4, 349.99
+Plantronics BackBeat Go 810, наушники, 5, 129.99
+Bang & Olufsen Beoplay H4, наушники, 2, 349.99
+JBL Tune 500BT, наушники, 10, 129.99
+Lenovo Legion 5, ноутбук, 3, 1199.99
+Apple iMac 24, ноутбук, 2, 1299.99
+HP Omen 15, ноутбук, 5, 1599.99
+Dell Inspiron 15, ноутбук, 4, 849.99
