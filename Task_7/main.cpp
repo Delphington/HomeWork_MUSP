@@ -78,11 +78,7 @@ private:
         stringstream ss(str);
         string word;
 
-        // Используем getline с запятой в качестве разделителя
         while (getline(ss, word, ',')) {
-            // Удаляем пробелы в начале и конце слова
-            word.erase(0, word.find_first_not_of(" t")); // Удаление пробелов в начале
-            word.erase(word.find_last_not_of(" t") + 1); // Удаление пробелов в конце
             words.push_back(word);
         }
 
@@ -112,10 +108,10 @@ public:
 
     void updateMapa(string &line) {
         vector<string> wods = splitString(line);
-        for (int i = 0; i < wods.size(); i++) {
-            cout << wods[i] << ":";
-        }
-        cout << endl;
+//        for (int i = 0; i < wods.size(); i++) {
+//            cout << wods[i] << ":";
+//        }
+//        cout << endl;
 
         //Dell Inspiron 15:ноутбук:4:849.99:
         string type = wods[1];
@@ -125,7 +121,6 @@ public:
         try {
             amount = (stod(wods[2]));
             price = stod(wods[3]);
-
         } catch (...) {
             cout << "ERROR преобразования" << endl;
             return;
