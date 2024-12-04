@@ -3,8 +3,7 @@
 #include <cstdint>
 
 
-class TimeMeterImplemetation
-{
+class TimeMeterImplemetation{
 public:
     // установка временной метки (от начала времени отсчета
     virtual double setTimeStamp(unsigned num) = 0;

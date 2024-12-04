@@ -1,13 +1,13 @@
 #include "time_meter.h"
 #include <iostream>
-#include <thread>
-#include <chrono>
 #include <vector>
+
+using namespace std;
 
 int main() {
     TimeMeter meter(4);
 
-    std::vector<int> vec;
+    vector<int> vec;
     for (int i = 0; i < 1000000; ++i) vec.push_back(i);
     
     meter.setTimeStamp(0);

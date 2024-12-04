@@ -119,7 +119,7 @@ public:
         int amount;
         double price;
         try {
-            amount = (stod(wods[2]));
+            amount = (stoi(wods[2]));
             price = stod(wods[3]);
         } catch (...) {
             cout << "ERROR преобразования" << endl;

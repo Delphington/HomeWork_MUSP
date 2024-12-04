@@ -1,56 +1,54 @@
 #include "TimeMeter_win.h"
+//API
 
-
-TimeMeterOS::TimeMeterOS(unsigned count)
-{
-    QueryPerformanceFrequency(&_frequency);
-    QueryPerformanceCounter(&_ts);
-    _stamps.resize(count);
-    _count = count;
+TimeMeterOS::TimeMeterOS(unsigned count) {
+    QueryPerformanceFrequency(&frequency); //частота таймера
+    QueryPerformanceCounter(&timeStart); //текущее значение счетчика
+    arrStamps.resize(count);
+    countStamps = count;
 }
 
-double TimeMeterOS::getSDiff(unsigned first, unsigned second) const
-{
-    if (first >= _count || second >= _count)
+// Получение разницы между метками в секундах и миллисекундах
+double TimeMeterOS::getSDiff(unsigned first, unsigned second) const {
+    if (first >= countStamps || second >= countStamps)
         throw std::out_of_range("Stamp index out of range\n");
-    return _getSDiff(_stamps[first], _stamps[second]);
+    return _getSDiff(arrStamps[first], arrStamps[second]);
 }
 
-int64_t TimeMeterOS::getMSDiff(unsigned first, unsigned second) const
-{
-    return static_cast<int64_t>(_getSDiff(_stamps[first], 
-                                         _stamps[second]) * 1000);
+// Получение разницы между метками в секундах и миллисекундах
+int64_t TimeMeterOS::getMSDiff(unsigned first, unsigned second) const {
+    return static_cast<int64_t>(_getSDiff(arrStamps[first],arrStamps[second]) * 1000);
 }
 
-double TimeMeterOS::setTimeStamp(unsigned num)
-{
-    if (num >= _count)
+// установка временной метки (от начала времени отсчета
+double TimeMeterOS::setTimeStamp(unsigned num) {// индекс
+    if (num >= countStamps)
         throw std::out_of_range("Stamp index out of range\n");
     LARGE_INTEGER ts;
-    QueryPerformanceCounter(&ts);
-    _stamps[num] = ts;
-    return _getSDiff(_ts, ts);
+    QueryPerformanceCounter(&ts); //текущее значение
+    arrStamps[num] = ts;
+    return _getSDiff(ts, ts); //0
 }
 
-double TimeMeterOS::getSTimeStamp(unsigned num) const
-{
-    if (num >= _count)
+// Получение времени метки в секундах и миллисекундах
+double TimeMeterOS::getSTimeStamp(unsigned num) const {
+    if (num >= countStamps)
         throw std::out_of_range("Stamp index out of range\n");
-    return _getSDiff(_ts, _stamps[num]);
+    return _getSDiff(timeStart, arrStamps[num]);
 }
 
-int64_t TimeMeterOS::getMSTimeStamp(unsigned num) const
-{
+// Получение времени метки в секундах и миллисекундах
+int64_t TimeMeterOS::getMSTimeStamp(unsigned num) const {
     return static_cast<int64_t>(getSTimeStamp(num) * 1000);
 }
 
-bool TimeMeterOS::isLess(unsigned first, unsigned second, int64_t expected) const
-{
+// Проверка, не превосходит ли ожидаемого значения (в секундах и миллисекундах)
+bool TimeMeterOS::isLess(unsigned first, unsigned second, int64_t expected) const {
     return (getMSDiff(first, second) < expected);
 }
 
-bool TimeMeterOS::isLess(unsigned num, int64_t expected) const
-{
+// Проверка, не превосходит ли ожидаемого значения (в секундах и миллисекундах)
+bool TimeMeterOS::isLess(unsigned num, int64_t expected) const {
     return (getMSTimeStamp(num) < expected);
 }
 

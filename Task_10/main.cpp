@@ -25,7 +25,6 @@ public:
         return (argc == 5 && strcmp(argv[2], "-r") == 0);
     }
 
-
     static string strReplace(string str, string findStr, string replaceStr) {
         size_t index = 0;
         while (true) {
@@ -58,6 +57,7 @@ int main(int argc, char *argv[]) {
 
     //  / - объединение
     fs::path dir = fs::current_path() / argv[1];
+
     if (!fs::exists(dir)) {
         throw runtime_error("Директория не существует");
     }
