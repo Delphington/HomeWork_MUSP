@@ -21,27 +21,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2841a09a-adf8-4a01-8dc2-b830971f787e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Task_10/Dir/Capybarao.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/Dir/Capybarao2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/Dir/Some/telko.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_10/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_10/main.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyTanks" beforeDir="false" afterPath="$PROJECT_DIR$/../MyTanks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task_2_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_2_1/TimeMeter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1/TimeMeter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_2_1/TimeMeter_win.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1/TimeMeter_win.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_2_1/TimeMeter_win.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1/TimeMeter_win.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task_2_1/capy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1/capy.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task_2_1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_1/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_7/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_7/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_7/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_7/main.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeterImplemetation.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_lin.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_lin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_win.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_win.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task_12/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../task_12/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +94,7 @@
       <workItem from="1731061152222" duration="2057000" />
       <workItem from="1732263811822" duration="31000" />
       <workItem from="1732263860796" duration="17000" />
+      <workItem from="1733491531949" duration="1000" />
     </task>
     <servers />
   </component>

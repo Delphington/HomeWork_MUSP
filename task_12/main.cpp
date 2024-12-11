@@ -1,88 +1,94 @@
-#include <iostream>
+#include <queue>
 #include <thread>
 #include <mutex>
 #include <condition_variable>
-#include <queue>
-#include <chrono>
 #include <random>
+#include <chrono>
+#include <iostream>
+#include <windows.h>
 
+using namespace std;
 
 class CoffeeShop {
 private:
-    size_t maxCustomers;
-    size_t customersServed;
-    std::queue<int> waiting_customers;
-    std::mutex mutex_;
-    std::condition_variable condition_;
+    queue<int> clientQueue;
+    condition_variable waitGroup;
 
+    mutex myMutex;
+    volatile bool isWorkCoffee;
+    int countSeat;
+
+    thread baristaThread;
+    thread clientThread;
 public:
-    CoffeeShop(size_t max_customers) : maxCustomers(max_customers), customersServed(0) {}
+    CoffeeShop(int countSeat) : isWorkCoffee(true), countSeat(countSeat) {}
 
-    // Метод для входа клиента в кофейню
-    void enter(int customer_id) {
-        std::unique_lock<std::mutex> lock(mutex_); // Блокируем мьютекс для безопасного доступа к общим данным
-        // Проверяем, есть ли свободные места
-        if (waiting_customers.size() < maxCustomers) {
-            waiting_customers.push(customer_id); // Добавляем клиента в очередь ожидания
-            std::cout << "Customer " << customer_id << " took a seat. Waiting customers: " << waiting_customers.size() << std::endl;
-            condition_.notify_one(); // Уведомляем баристу, что есть клиент
-        } else {
-            // Если мест нет, клиент покидает кофейню
-            std::cout << "Customer " << customer_id << " left the shop (no seats available)." << std::endl;
-        }
+    // Деструктор класса CoffeeShop. Устанавливает флаг isOpen в false, уведомляет баристу о закрытии и ждет завершения потоков.
+    ~CoffeeShop() {
+        isWorkCoffee = false;
+        waitGroup.notify_one(); // Сигнализируем баристе о закрытии
+        if (baristaThread.joinable()) baristaThread.join();
+        if (clientThread.joinable()) clientThread.join();
     }
 
-    // Метод, который обслуживает клиентов
-    void serve() {
-        while (true) { // Бесконечный цикл для постоянного обслуживания клиентов
-            int customer_id;
-            {
-                std::unique_lock<std::mutex> lock(mutex_); // Блокируем мьютекс для безопасного доступа к очереди клиентов
-                // Ожидаем, пока не появится клиент в очереди
-                condition_.wait(lock, [this] { return !waiting_customers.empty(); });
-                customer_id = waiting_customers.front(); // Берем клиента из начала очереди
-                waiting_customers.pop(); // Убираем клиента из очереди
+    // Запускает потоки бариста и генератора клиентов.
+    void start() {
+        baristaThread = thread(&CoffeeShop::baristaWork, this);
+        clientThread = thread(&CoffeeShop::generateClient, this);
+    }
+
+private:
+    void baristaWork() {
+        while (isWorkCoffee || !clientQueue.empty()) {
+            unique_lock<mutex> lock(myMutex); // Блокируем мьютекс перед доступом к очереди.
+
+            // Блокируем, ждем нового клиента
+            waitGroup.wait(lock, [this] {
+                return !clientQueue.empty() || !isWorkCoffee; }
+                );
+
+            if (!clientQueue.empty()) {
+                int consimer = clientQueue.front();
+                clientQueue.pop();
+                lock.unlock();
+                cout << "Бариста варит кофе для клиента : " << consimer << endl;
+                this_thread::sleep_for(chrono::seconds(3)); // Имитация приготовления кофе.
+                cout << "Бариста закончил с клиентом : " << consimer << std::endl;
+            } else if (!isWorkCoffee) {
+                return;
             }
-            // Симуляция обслуживания кофе
-            std::cout << "Barista is serving coffee to customer " << customer_id << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Время, необходимое для обслуживания кофе
-            customersServed++; // Увеличиваем счетчик обслуженных клиентов
-            std::cout << "Customer " << customer_id << " has been served." << std::endl;
         }
+        cout << "Бариста купил себе свободу" << endl;
     }
 
+    // Функция, имитирующая генерацию клиентов.
+    void generateClient() {
+        int consimer = 1;
+        default_random_engine dre;
+        minstd_rand gen(dre());
+        uniform_int_distribution<> ourRandom(500, 3000); // Распределение для задержки (500-2000 мс).
 
+        while (isWorkCoffee) {
+            this_thread::sleep_for(chrono::milliseconds(ourRandom(gen))); // Случайная задержка перед появлением клиента.
+
+            lock_guard<mutex> lock(myMutex);
+            if (clientQueue.size() < countSeat) {
+                clientQueue.push(consimer++);
+                cout << "Клиент : " << consimer - 1 << " занял место. Ждуны: " << clientQueue.size() << endl;
+                waitGroup.notify_one();
+            } else {
+                cout << "Клиент : " << consimer << " ушел. Все стулья заняты" << endl;
+            }
+        }
+    }
 };
 
-// Функция потока клиента
-void customer_thread(CoffeeShop& shop, int id) {
-    // Клиент ждет случайное время перед входом в кофейню
-    std::this_thread::sleep_for(std::chrono::milliseconds(rand() % 901 + 100)); // Случайное время ожидания между 100 и 1000 мс
-    shop.enter(id); // Клиент пытается войти в кофейню
-}
-
 int main() {
-    const int num_customers = 20;
-    const int max_seats = 5;
+    // Устанавливаем кодировку консоли для корректного отображения кириллицы на Windows.
+    SetConsoleOutputCP(CP_UTF8);
 
-    CoffeeShop shop(max_seats);
-
-    // Запускаем поток баристы
-    std::thread barista(&CoffeeShop::serve, &shop);
-
-    // Запускаем потоки клиентов
-    std::vector<std::thread> customers;
-    for (int i = 0; i < num_customers; ++i) {
-        customers.emplace_back(customer_thread, std::ref(shop), i + 1); // Создаем поток для каждого клиента
-    }
-
-    // Дожидаемся завершения всех потоков клиентов
-    for (auto& customer : customers) {
-        customer.join();
-    }
-
-    // Опционально, можем остановить поток баристы после обслуживания всех клиентов
-    barista.detach(); // Отсоединяем поток баристы, чтобы он продолжал работать независимо
-
-    return 0; // Завершение программы
+    CoffeeShop shop(5); // Создаем кофейню с 5 стульями
+    shop.start();
+    this_thread::sleep_for(chrono::seconds(30)); // Работа кофейни 20 секунд
+    return 0;
 }

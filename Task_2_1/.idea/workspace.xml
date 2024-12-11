@@ -21,28 +21,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32057741-6410-49e4-bb8f-be9a9c061098" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Task_10/Dir/Capybarao.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/Dir/Capybarao2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/Dir/Some/telko.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_10/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_10/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_10/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyTanks" beforeDir="false" afterPath="$PROJECT_DIR$/../MyTanks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeMeter.h" beforeDir="false" afterPath="$PROJECT_DIR$/TimeMeter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeMeterImplemetation.h" beforeDir="false" afterPath="$PROJECT_DIR$/TimeMeterImplemetation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeMeter_win.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TimeMeter_win.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TimeMeter_win.h" beforeDir="false" afterPath="$PROJECT_DIR$/TimeMeter_win.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/capy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/capy.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_7/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_7/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task_7/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_7/main.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeterImplemetation.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_lin.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_lin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_win.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/TimeMeter_win.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task_12/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../task_12/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +63,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/_DELPGINGTON/University/Sem_3/Musp/Task_2_1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -89,6 +74,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\_DELPGINGTON\University\Sem_3\Musp\Task_2_1" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\_DELPGINGTON\University\Sem_3\Musp\Task_2_1" />
     </key>
@@ -121,6 +109,14 @@
       <workItem from="1732878626755" duration="153000" />
       <workItem from="1732879960015" duration="1928000" />
       <workItem from="1733084450433" duration="18000" />
+      <workItem from="1733306852322" duration="686000" />
+      <workItem from="1733308986354" duration="643000" />
+      <workItem from="1733309709881" duration="212000" />
+      <workItem from="1733393784310" duration="17000" />
+      <workItem from="1733405716342" duration="673000" />
+      <workItem from="1733472754850" duration="3257000" />
+      <workItem from="1733491540729" duration="2415000" />
+      <workItem from="1733516396700" duration="23000" />
     </task>
     <servers />
   </component>
